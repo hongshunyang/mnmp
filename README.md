@@ -187,10 +187,9 @@ Final Tests
 - [http://localhost](http://localhost) → “Nginx works” page
 - [http://localhost/phpinfo](http://localhost/phpinfo) → phpinfo()
 - [http://localhost/nope](http://localhost/nope) → ” Not Found” page
-- [https://localhost:443](https://localhost:443) → “Nginx works” page (SSL)
-- [https://localhost:443/phpinfo](https://localhost:443/phpinfo) → phpinfo() (SSL)
-- [https://localhost:443/nope](https://localhost:443/nope) → “Not Found” page (SSL)
-- [https://localhost:306](https://localhost:306) → phpMyAdmin (SSL)
+- [https://localhost](https://localhost) → “Nginx works” page (SSL)
+- [https://localhost/phpinfo](https://localhost/phpinfo) → phpinfo() (SSL)
+- [https://localhost/nope](https://localhost/nope) → “Not Found” page (SSL)
 
 ## Alias
 

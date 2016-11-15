@@ -258,6 +258,6 @@ ln -sfv /usr/local/etc/nginx/sites-available/phpmyadmin /usr/local/etc/nginx/sit
 
 ###### reference
 
--[https://gist.github.com/johnantoni/07df65898456ace4307d5bb6cbdc7f51](https://gist.github.com/johnantoni/07df65898456ace4307d5bb6cbdc7f51)
+- [https://gist.github.com/johnantoni/07df65898456ace4307d5bb6cbdc7f51](https://gist.github.com/johnantoni/07df65898456ace4307d5bb6cbdc7f51)
 
 

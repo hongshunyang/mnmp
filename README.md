@@ -122,8 +122,7 @@ Check
 
 - [http://localhost](http://localhost) → “Nginx works” page
 
-_tip:_ check fix localhost : `cat /etc/hosts`
-
+_tip:_ check fix localhost : `cat /etc/hosts` include like this `127.0.0.1  localhost`
 
 
 ## Configurations
@@ -242,16 +241,4 @@ nginx.logs.default.access
 nginx.logs.default-ssl.access
 nginx.logs.phpmyadmin.access
 ```
-
-
-
-
-
-
-
-
-
-
-
-
 

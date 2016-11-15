@@ -252,9 +252,12 @@ openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj '/C=US/ST=State/L
 ln -sfv /usr/local/etc/nginx/sites-available/phpmyadmin /usr/local/etc/nginx/sites-enabled/phpmyadmin
 
 ```
-## Check
+#### Check
 
 - [https://localhost:306](https://localhost:306) → phpMyAdmin (SSL)
 
+###### reference
+
+-[https://gist.github.com/johnantoni/07df65898456ace4307d5bb6cbdc7f51](https://gist.github.com/johnantoni/07df65898456ace4307d5bb6cbdc7f51)
 
 

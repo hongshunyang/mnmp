@@ -136,14 +136,52 @@ curl -L https://raw.githubusercontent.com/hongshunyang/mnmp/master/nginx.conf -o
 
 ```
 
-nginx php-fpm
+nginx/php-fpm
 
 ```
 curl -L https://raw.githubusercontent.com/hongshunyang/mnmp/master/php-fpm -o /usr/local/etc/nginx/conf.d/php-fpm
 
 ```
 
+virtual hosts
 
+```
+curl -L https://raw.githubusercontent.com/hongshunyang/mnmp/master/sites-available_default -o /usr/local/etc/nginx/sites-available/default
+curl -L https://raw.githubusercontent.com/hongshunyang/mnmp/master/sites-available_default-ssl -o /usr/local/etc/nginx/sites-available/default-ssl
+```
+
+example:
+
+```
+curl -L https://raw.githubusercontent.com/hongshunyang/mnmp/master/www/.info.php -o /var/www/.info.php
+curl -L https://raw.githubusercontent.com/hongshunyang/mnmp/master/www/403.html -o /var/www/403.html
+curl -L https://raw.githubusercontent.com/hongshunyang/mnmp/master/www/404.html -o /var/www/404.html
+curl -L https://raw.githubusercontent.com/hongshunyang/mnmp/master/www/index.html -o /var/www/index.html
+```
+
+Set up SSL
+
+```
+mkdir -p /usr/local/etc/nginx/ssl
+openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj '/C=US/ST=State/L=Town/O=Office/CN=localhost' -keyout /usr/local/etc/nginx/ssl/localhost.key -out /usr/local/etc/nginx/ssl/localhost.crt
+```
+
+Enable Virtual Host
+
+```
+ln -sfv /usr/local/etc/nginx/sites-available/default /usr/local/etc/nginx/sites-enabled/default
+ln -sfv /usr/local/etc/nginx/sites-available/default-ssl /usr/local/etc/nginx/sites-enabled/default-ssl
+```
+
+Final Tests
+
+* http://localhost → “Nginx works” page
+* http://localhost/info → phpinfo()
+* http://localhost/nope → ” Not Found” page
+* https://localhost:443 → “Nginx works” page (SSL)
+* https://localhost:443/info → phpinfo() (SSL)
+* https://localhost:443/nope → “Not Found” page (SSL)
+* https://localhost:306 → phpMyAdmin (SSL)
 
 
 

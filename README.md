@@ -252,5 +252,9 @@ openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj '/C=US/ST=State/L
 ln -sfv /usr/local/etc/nginx/sites-available/phpmyadmin /usr/local/etc/nginx/sites-enabled/phpmyadmin
 
 ```
+## Check
+
+- [https://localhost:306](https://localhost:306) → phpMyAdmin (SSL)
+
 
 

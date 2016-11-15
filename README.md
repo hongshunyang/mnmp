@@ -1,5 +1,12 @@
 # mnmp
-nginx,php-fpm,mysql for mac
+nginx,php-fpm,mysql for mac osx 10.12.x
+
+## version
+
+- nginx version: nginx/1.10.2
+- mysql  Ver 14.14 Distrib 5.7.16, for osx10.12 (x86_64)
+- PHP 5.6.27
+
 
 ## Xcode
 

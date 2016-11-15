@@ -153,7 +153,7 @@ curl -L https://raw.githubusercontent.com/hongshunyang/mnmp/master/sites-availab
 example:
 
 ```
-curl -L https://raw.githubusercontent.com/hongshunyang/mnmp/master/www/.info.php -o /var/www/.info.php
+curl -L https://raw.githubusercontent.com/hongshunyang/mnmp/master/www/phpinfo.php -o /var/www/phpinfo.php
 curl -L https://raw.githubusercontent.com/hongshunyang/mnmp/master/www/403.html -o /var/www/403.html
 curl -L https://raw.githubusercontent.com/hongshunyang/mnmp/master/www/404.html -o /var/www/404.html
 curl -L https://raw.githubusercontent.com/hongshunyang/mnmp/master/www/index.html -o /var/www/index.html
@@ -176,10 +176,10 @@ ln -sfv /usr/local/etc/nginx/sites-available/default-ssl /usr/local/etc/nginx/si
 Final Tests
 
 - [http://localhost](http://localhost) → “Nginx works” page
-- [http://localhost/info](http://localhost/info) → phpinfo()
+- [http://localhost/phpinfo](http://localhost/phpinfo) → phpinfo()
 - [http://localhost/nope](http://localhost/nope) → ” Not Found” page
 - [https://localhost:443](https://localhost:443) → “Nginx works” page (SSL)
-- [https://localhost:443/info](https://localhost:443/info) → phpinfo() (SSL)
+- [https://localhost:443/phpinfo](https://localhost:443/phpinfo) → phpinfo() (SSL)
 - [https://localhost:443/nope](https://localhost:443/nope) → “Not Found” page (SSL)
 - [https://localhost:306](https://localhost:306) → phpMyAdmin (SSL)
 

@@ -9,10 +9,10 @@ server {
         include   /usr/local/etc/nginx/conf.d/php-fpm;
     }
 
-    location = /info {
+    location = /phpinfo {
         allow   127.0.0.1;
         deny    all;
-        rewrite (.*) /.info.php;
+        rewrite (.*) /phpinfo.php;
     }
 
     error_page  404     /404.html;

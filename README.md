@@ -61,7 +61,7 @@ Check
 lsof -Pni4 | grep LISTEN | grep php
 ```
 
-## Mysql
+## MySQL
 
 ```
 brew install mysql
@@ -175,13 +175,65 @@ ln -sfv /usr/local/etc/nginx/sites-available/default-ssl /usr/local/etc/nginx/si
 
 Final Tests
 
-* http://localhost → “Nginx works” page
-* http://localhost/info → phpinfo()
-* http://localhost/nope → ” Not Found” page
-* https://localhost:443 → “Nginx works” page (SSL)
-* https://localhost:443/info → phpinfo() (SSL)
-* https://localhost:443/nope → “Not Found” page (SSL)
-* https://localhost:306 → phpMyAdmin (SSL)
+- [http://localhost](http://localhost) → “Nginx works” page
+- [http://localhost/info](http://localhost/info) → phpinfo()
+- [http://localhost/nope](http://localhost/nope) → ” Not Found” page
+- [https://localhost:443](https://localhost:443) → “Nginx works” page (SSL)
+- [https://localhost:443/info](https://localhost:443/info) → phpinfo() (SSL)
+- [https://localhost:443/nope](https://localhost:443/nope) → “Not Found” page (SSL)
+- [https://localhost:306](https://localhost:306) → phpMyAdmin (SSL)
+
+## Alias
+
+```
+curl -L https://raw.githubusercontent.com/hongshunyang/mnmp/master/aliases -o /tmp/aliases
+```
+
+bash
+
+```
+cat /tmp/aliases >> ~/.profile
+source ~/.profile
+```
+
+zsh
+
+```
+cat /tmp/.aliases >> ~/.zshrc 
+source ~/.zshrc
+```
+
+#### Nginx
+```
+nginx.start
+nginx.stop
+nginx.restart
+```
+
+#### PHP-FPM
+```
+php-fpm.start
+php-fpm.stop
+php-fpm.restart
+```
+
+#### MySQL
+```
+mysql.start
+mysql.stop
+mysql.restart
+```
+
+#### Nginx Logs
+```
+nginx.logs.error
+nginx.logs.access
+nginx.logs.default.access
+nginx.logs.default-ssl.access
+nginx.logs.phpmyadmin.access
+```
+
+
 
 
 

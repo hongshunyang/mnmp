@@ -238,6 +238,19 @@ nginx.logs.error
 nginx.logs.access
 nginx.logs.default.access
 nginx.logs.default-ssl.access
-nginx.logs.phpmyadmin.access
 ```
+
+# phpMyAdmin
+
+```
+brew install phpmyadmin
+
+curl -L https://raw.githubusercontent.com/hongshunyang/mnmp/master/phpmyadmin/sites-available_phpmyadmin -o /usr/local/etc/nginx/sites-available/phpmyadmin
+
+openssl req -new -newkey rsa:4096 -days 365 -nodes -x509 -subj '/C=US/ST=State/L=Town/O=Office/CN=phpmyadmin' -keyout /usr/local/etc/nginx/ssl/phpmyadmin.key -out /usr/local/etc/nginx/ssl/phpmyadmin.crt
+
+ln -sfv /usr/local/etc/nginx/sites-available/phpmyadmin /usr/local/etc/nginx/sites-enabled/phpmyadmin
+
+```
+
 

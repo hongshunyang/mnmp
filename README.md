@@ -62,7 +62,7 @@ Start
 launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
 ```
 
-Check
+Check(127.0.0.1:9000)
 
 ```
 lsof -Pni4 | grep LISTEN | grep php
@@ -111,17 +111,20 @@ sudo cp /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/
 sudo chown root:wheel /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
 ```
 
-Test
+Start/Stop
 
 ```
 sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
-```
-
-Stop
-
-```
 sudo launchctl unload /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
 ```
+
+Check
+
+- [http://localhost](http://localhost) → “Nginx works” page
+
+_tip:_ check fix localhost : `cat /etc/hosts`
+
+
 
 ## Configurations
 

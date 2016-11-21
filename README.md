@@ -36,6 +36,13 @@ Update and Upgrade
 brew update && brew upgrade
 ```
 
+Cleanup(remove outdated version)
+
+```
+brew cleanup
+```
+
+
 ## PHP(FPM)
 
 ```

@@ -42,12 +42,13 @@ Cleanup(remove outdated version)
 brew cleanup
 ```
 
-Info/options/uninstall
+Info/options/uninstall/background running/stop
 
 ```
 brew info php56
 brew options php56
 brew uninstall php56
+brew services start/stop/restart php56
 ```
 
 
@@ -73,17 +74,26 @@ or
 brew install homebrew/php/php56 
 ```
 
+check php module
+
+```
+php -m
+```
+
+
 Setup auto start
 
 ```
 mkdir -p ~/Library/LaunchAgents
-cp /usr/local/opt/php56/homebrew.mxcl.php56.plist ~/Library/LaunchAgents/
+ln -sfv /usr/local/opt/php56/*.plist ~/Library/LaunchAgents/
 ```
 
 Start
 
 ```
 launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist
+or
+brew services start php56
 ```
 
 Check(127.0.0.1:9000)
@@ -108,6 +118,8 @@ Start
 
 ```
 launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+or 
+brew services start mysql
 ```
 
 Secure Installation
@@ -131,15 +143,14 @@ brew install nginx
 Setup auto start
 
 ```
-sudo cp /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/
-sudo chown root:wheel /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
+ln -sfv /usr/local/opt/nginx/*.plist /Library/LaunchDaemons/
 ```
 
 Start/Stop
 
 ```
-sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
-sudo launchctl unload /Library/LaunchDaemons/homebrew.mxcl.nginx.plist
+brew services start nginx
+brew services stop nginx
 ```
 
 Check

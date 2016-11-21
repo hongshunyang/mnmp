@@ -114,7 +114,9 @@ lsof -Pni4 | grep LISTEN | grep php
 
 ```
 brew install mariadb
+mysql_secure_installation
 ```
+
 
 Setup auto start
 

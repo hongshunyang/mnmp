@@ -12,6 +12,8 @@ nginx,php-fpm,mysql for mac osx 10.12.x
 ```
 lsof -i -n -P
 netstat -an | grep LISTEN 
+lsof -i:3306
+kill -9 <pid>
 ```
 
 ## Xcode

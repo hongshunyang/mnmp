@@ -7,6 +7,12 @@ nginx,php-fpm,mysql for mac osx 10.12.x
 - mysql  Ver 14.14 Distrib 5.7.16, for osx10.12 (x86_64)
 - PHP 5.6.27
 
+## list port number
+
+```
+lsof -i -n -P
+netstat -an | grep LISTEN 
+```
 
 ## Xcode
 
@@ -122,9 +128,15 @@ or
 brew services start mysql
 ```
 
-Secure Installation
+Trouble(mysql_secure_installation) Solved
 
 ```
+sudo chown -R `whoami` /usr/local/var/mysql
+sudo mysqld_safe --skip-grant-table
+sudo mysql --user=root mysql
+mysql> update user set authentication_string=PASSWORD('new-password') where user='root';
+mysql>flush privileges;
+mysql>\q
 mysql_secure_installation
 ```
 

@@ -42,18 +42,35 @@ Cleanup(remove outdated version)
 brew cleanup
 ```
 
+Info/options/uninstall
+
+```
+brew info php56
+brew options php56
+brew uninstall php56
+```
+
 
 ## PHP(FPM)
 
-```
-brew tap homebrew/dupes
-brew tap josegonzalez/homebrew-php
-```
+~~brew tap homebrew/dupes~~
 
-Install PHP
+~~brew tap josegonzalez/homebrew-php~~
+
+~~brew untap homebrew/dupes~~
+
+~~brew untap josegonzalez/php~~
+
+
+Install PHP(default without apache,with mysql)
 
 ```
-brew install --without-apache --with-fpm --with-mysql php56
+brew tap homebrew/php
+brew install  php56
+```
+or
+```
+brew install homebrew/php/php56 
 ```
 
 Setup auto start

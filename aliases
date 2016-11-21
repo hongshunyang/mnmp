@@ -1,18 +1,18 @@
 ### SERVER SERVICES ALIAS
 # Nginx
-alias nginx.start='sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
-alias nginx.stop='sudo launchctl unload /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
-alias nginx.restart='nginx.stop && nginx.start'
+alias nginx.start='sudo brew services start nginx'
+alias nginx.stop='sudo brew services stop nginx'
+alias nginx.restart='sudo brew services restart nginx'
 
 # PHP-FPM
-alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist"
-alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php56.plist"
-alias php-fpm.restart='php-fpm.stop && php-fpm.start'
+alias php56.start="brew services start php56"
+alias php56.stop="brew services stop php56"
+alias php56.restart="brew services restart php56"
 
 # MySQL
-alias mysql.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
-alias mysql.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
-alias mysql.restart='mysql.stop && mysql.start'
+alias mysql.start="brew services start mysql"
+alias mysql.stop="brew services stop mysql"
+alias mysql.restart="brew services restart mysql"
 
 # Nginx Logs
 alias nginx.logs.error='tail -250f /usr/local/etc/nginx/logs/error.log'

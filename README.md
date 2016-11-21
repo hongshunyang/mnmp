@@ -255,9 +255,9 @@ nginx.restart
 
 #### PHP-FPM
 ```
-php-fpm.start
-php-fpm.stop
-php-fpm.restart
+php56.start
+php56.stop
+php56.restart
 ```
 
 #### MySQL

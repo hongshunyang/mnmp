@@ -1,11 +1,11 @@
 # mnmp
-nginx,php-fpm,mariadb for mac osx 10.12.x
+nginx,php-fpm,mysql for mac osx 10.12.x
 
 ## version
 
 - nginx version: nginx/1.10.2
+- mysql  Ver 14.14 Distrib 5.7.16, for osx10.12 (x86_64)
 - PHP 5.6.27
-- mariadb 10.1.19
 
 ## list port number
 
@@ -71,7 +71,7 @@ brew services start/stop/restart php56
 ~~brew untap josegonzalez/php~~
 
 
-Install PHP(default without apache,with mariadb)
+Install PHP(default without apache,with mysql)
 
 ```
 brew tap homebrew/php
@@ -110,24 +110,49 @@ Check(127.0.0.1:9000)
 lsof -Pni4 | grep LISTEN | grep php
 ```
 
-## MariaDB
+## MySQL
 
 ```
-brew install mariadb
+brew install mysql
 ```
+
+if failed
+
+```
+brew postinstall mysql
+```
+
 
 Setup auto start
 
 ```
-ln -sfv /usr/local/opt/mariadb/*.plist ~/Library/LaunchAgents
+ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
 ```
 
 Start
 
 ```
-launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
 or 
-brew services start mariadb
+brew services start mysql
+```
+
+Trouble(mysql_secure_installation) Solved
+
+```
+sudo chown -R `whoami` /usr/local/var/mysql
+sudo mysqld_safe --skip-grant-tables
+sudo mysql --user=root mysql
+mysql> update user set authentication_string=PASSWORD('new-password') where user='root';
+mysql>flush privileges;
+mysql>\q
+mysql_secure_installation
+```
+
+Reboot mysql failed
+```
+rm /usr/local/var/mysql/*.err
+mysql.server start
 ```
 
 Test Connection
@@ -231,20 +256,20 @@ Final Tests
 ## Alias
 
 ```
-curl -L https://raw.githubusercontent.com/hongshunyang/mnmp/master/aliases -o /tmp/aliases
+curl -L https://raw.githubusercontent.com/hongshunyang/mnmp/master/mysql.aliases -o /tmp/mysql.aliases
 ```
 
 bash
 
 ```
-cat /tmp/aliases >> ~/.profile
+cat /tmp/mysql.aliases >> ~/.profile
 source ~/.profile
 ```
 
 zsh
 
 ```
-cat /tmp/.aliases >> ~/.zshrc 
+cat /tmp/mysql.aliases >> ~/.zshrc 
 source ~/.zshrc
 ```
 
@@ -262,11 +287,11 @@ php56.stop
 php56.restart
 ```
 
-#### MariaDB
+#### MySQL
 ```
-mariadb.start
-mariadb.stop
-mariadb.restart
+mysql.start
+mysql.stop
+mysql.restart
 ```
 
 #### Nginx Logs

@@ -9,10 +9,10 @@ alias php56.start="brew services start php56"
 alias php56.stop="brew services stop php56"
 alias php56.restart="brew services restart php56"
 
-# MariaDB
-alias mariadb.start="brew services start mariadb"
-alias mariadb.stop="brew services stop mariadb"
-alias mariadb.restart="brew services restart mariadb"
+# MySQL
+alias mysql.start="brew services start mysql"
+alias mysql.stop="brew services stop mysql"
+alias mysql.restart="brew services restart mysql"
 
 # Nginx Logs
 alias nginx.logs.error='tail -250f /usr/local/etc/nginx/logs/error.log'

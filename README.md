@@ -1,3 +1,13 @@
+#Notes
+
+> just practice with nginx,mariadb/mysql,php-fpm on mac osx
+
+> much more sexy development environments building tools like these:
+
+* [Docker](https://www.docker.com/what-docker)
+* [Vagrant+virtualbox/vmware/aws](https://www.vagrantup.com/docs/getting-started/)
+
+
 # mnmp
 nginx,php-fpm,mariadb for mac osx 10.12.x
 
